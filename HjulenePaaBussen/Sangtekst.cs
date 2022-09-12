@@ -41,7 +41,7 @@ public class Sangtekst
         Console.WriteLine(versPrimaerTekst);
 
         string firstLetterUpperCase = versGentagelser[0].Substring(0).ToUpper();
-        string restLettersLowerCase = versGentagelser[0].Substring(1, versGentagelser[0].Length).ToUpper();
+        string restLettersLowerCase = versGentagelser[0].Substring(1, versGentagelser[0].Length -1).ToUpper();
 
         sb.Clear();
         sb.Append(firstLetterUpperCase + restLettersLowerCase);
