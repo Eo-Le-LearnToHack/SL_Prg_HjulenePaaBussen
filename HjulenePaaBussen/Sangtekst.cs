@@ -47,6 +47,7 @@ public class Sangtekst
         sb.Append(firstLetterUpperCase + restLettersLowerCase);
         string versGentagelserTekst = sb.ToString();
         Console.WriteLine(versGentagelserTekst);
+        Console.WriteLine(versSlut);
     }
 
 }
