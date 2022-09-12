@@ -19,8 +19,10 @@ public class Sangtekst
         "Hornet i bussen siger "
 
     };
-	
-	private List<string> versGentagelser = new List<string>
+
+    private List<string> versPrimaerTekst = new List<string>();
+
+    private List<string> versGentagelser = new List<string>
 	{
 		"rundt, rundt, rundt",
         "åben og luk, åben og luk, åben og luk",
@@ -31,23 +33,43 @@ public class Sangtekst
 
     };
 
+    private List<string> versGentagelserTekst = new List<string> ();
+
     private string versSlut = "Gennem hele byen";
 
     private void UdskrivSangTekst ()
     {
         StringBuilder sb = new StringBuilder();
-        sb.Append(this.versPrimaer[0] + this.versGentagelser[0]);
-        string versPrimaerTekst = sb.ToString();
-        Console.WriteLine(versPrimaerTekst);
+        for (int i = 0; i < versPrimaer.Count; i++)
+        {
+            //sb.Append(this.versPrimaer[i] + this.versGentagelser[i]);
+            versPrimaerTekst.Add(this.versPrimaer[i] + this.versGentagelser[i]);
+            //sb.Clear();
+        }
 
-        string firstLetterUpperCase = versGentagelser[0].Substring(0, 1).ToUpper();
-        string restLettersLowerCase = versGentagelser[0].Substring(1).ToLower();
+        for (int i = 0; i < versGentagelser.Count; i++)
+        {
+            string firstLetterUpperCase = versGentagelser[i].Substring(0, 1).ToUpper();
+            string restLettersLowerCase = versGentagelser[i].Substring(1).ToLower();
+            this.versGentagelserTekst.Add(firstLetterUpperCase + restLettersLowerCase);
+            //sb.Clear();
+        }
 
-        sb.Clear();
-        sb.Append(firstLetterUpperCase + restLettersLowerCase);
-        string versGentagelserTekst = sb.ToString();
-        Console.WriteLine(versGentagelserTekst);
-        Console.WriteLine(versSlut);
+
+
+        //sb.Clear();
+        //sb.Append(firstLetterUpperCase + restLettersLowerCase);
+        //string versGentagelserTekst = sb.ToString();
+        //Console.WriteLine(versGentagelserTekst);
+
+        for (int i = 0; i < versPrimaer.Count; i++)
+        {
+            Console.WriteLine(this.versPrimaerTekst[i]);
+            Console.WriteLine(this.versGentagelserTekst[i]);
+            Console.WriteLine(this.versGentagelserTekst[i]);
+            Console.WriteLine(this.versPrimaerTekst[i]);
+            Console.WriteLine(this.versSlut);
+        }
     }
 
 }
