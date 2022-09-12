@@ -5,8 +5,6 @@ public class Sangtekst
 {
 	public Sangtekst()
 	{
-        this.UdskrivSangTekst();
-
     }
 
     private List<string> versPrimaer = new List<string>
@@ -34,17 +32,14 @@ public class Sangtekst
     };
 
     private List<string> versGentagelserTekst = new List<string> ();
-
     private string versSlut = "Gennem hele byen";
 
-    private void UdskrivSangTekst ()
+    public void UdskrivSangTekst ()
     {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < versPrimaer.Count; i++)
         {
-            //sb.Append(this.versPrimaer[i] + this.versGentagelser[i]);
             versPrimaerTekst.Add(this.versPrimaer[i] + this.versGentagelser[i]);
-            //sb.Clear();
         }
 
         for (int i = 0; i < versGentagelser.Count; i++)
@@ -52,23 +47,20 @@ public class Sangtekst
             string firstLetterUpperCase = versGentagelser[i].Substring(0, 1).ToUpper();
             string restLettersLowerCase = versGentagelser[i].Substring(1).ToLower();
             this.versGentagelserTekst.Add(firstLetterUpperCase + restLettersLowerCase);
-            //sb.Clear();
         }
 
 
-
-        //sb.Clear();
-        //sb.Append(firstLetterUpperCase + restLettersLowerCase);
-        //string versGentagelserTekst = sb.ToString();
-        //Console.WriteLine(versGentagelserTekst);
-
         for (int i = 0; i < versPrimaer.Count; i++)
         {
+            byte AntalGentagelser = 2;
             Console.WriteLine(this.versPrimaerTekst[i]);
-            Console.WriteLine(this.versGentagelserTekst[i]);
-            Console.WriteLine(this.versGentagelserTekst[i]);
+            for (int j = 0; j < AntalGentagelser; j++)
+            {
+                Console.WriteLine(this.versGentagelserTekst[i]);
+            }
             Console.WriteLine(this.versPrimaerTekst[i]);
             Console.WriteLine(this.versSlut);
+            Console.WriteLine();
         }
     }
 
