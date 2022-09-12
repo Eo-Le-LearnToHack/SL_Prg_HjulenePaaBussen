@@ -6,7 +6,7 @@ namespace HjulenePaaBussen
     {
         private static void Main(string[] args)
         {
-
+            Sangtekst sangtekst = new();
         }
     }
 }
